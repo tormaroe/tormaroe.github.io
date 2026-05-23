@@ -171,6 +171,39 @@ section:hover .section-title::after {
   margin-bottom: 0;
 }
 
+.skills-list {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin-top: -0.6rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skills-list:last-child {
+  margin-bottom: 0;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+}
+
+.skills-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+}
+
 /* 3. Projects Section */
 .projects-section {
   margin-bottom: 2.2rem;
