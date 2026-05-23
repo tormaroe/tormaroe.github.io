@@ -1,0 +1,14 @@
+{
+  "name": "tormaroe.github.io",
+  "version": "1.0.0",
+  "description": "Personal GitHub Page for Torbjørn Marø",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "resize": "node resize-image.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

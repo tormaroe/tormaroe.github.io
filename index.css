@@ -1,0 +1,429 @@
+/* 
+   Torbjørn Marø - Custom CSS Design System
+   Vanilla CSS with premium aesthetics, responsive layout, and interactive micro-animations.
+*/
+
+/* --- Design System Tokens --- */
+:root {
+  /* Color Palette (Warm Light / Almost White & Almost Black) */
+  --bg-color: #faf9f6;          /* Elegant warm alabaster */
+  --fg-color: #1a1918;          /* Warm near-black charcoal */
+  --fg-muted: #5c5954;          /* Soft charcoal for secondary text */
+  
+  --accent-primary: #8d7857;    /* Sophisticated bronze/brass */
+  --accent-hover: #715f44;      /* Deepened brass on hover */
+  --accent-light: #f5f2eb;      /* Light tinted brass cream */
+  
+  --card-bg: #ffffff;
+  --card-border: rgba(220, 215, 204, 0.6);
+  --card-shadow: 0 8px 30px -4px rgba(46, 44, 42, 0.05), 
+                 0 2px 10px -2px rgba(46, 44, 42, 0.03);
+  --card-shadow-hover: 0 20px 40px -8px rgba(46, 44, 42, 0.1), 
+                       0 4px 16px -2px rgba(46, 44, 42, 0.05);
+
+  /* Typography */
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Animations */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* --- Base Resets & Layout --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+/* Center Column */
+.content-column {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+/* --- Shared Components --- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(141, 120, 87, 0.3);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--accent-primary);
+  transition: var(--transition-smooth);
+}
+
+section:hover .section-title::after {
+  width: 100%;
+}
+
+/* --- Section Specific Styles --- */
+
+/* 1. Banner Section */
+.banner-section {
+  margin-bottom: 2rem;
+}
+
+.banner-wrapper {
+  width: 100%;
+  height: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner-wrapper:hover .banner-img {
+  transform: scale(1.03);
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26, 25, 24, 0) 60%, rgba(26, 25, 24, 0.05));
+  pointer-events: none;
+}
+
+/* 2. Profile Details */
+.profile-section {
+  margin-bottom: 2.2rem;
+}
+
+.profile-header {
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.profile-name {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.profile-bio p {
+  margin-bottom: 1.2rem;
+  color: var(--fg-muted);
+}
+
+.profile-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* 3. Projects Section */
+.projects-section {
+  margin-bottom: 2.2rem;
+}
+
+.projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.project-card:hover .project-name {
+  color: var(--accent-primary);
+}
+
+.project-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  border-radius: 12px;
+  border: 1px solid rgba(141, 120, 87, 0.15);
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fg-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.link-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+.project-card:hover .project-link {
+  color: var(--accent-primary);
+}
+
+.project-visual {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: var(--accent-light);
+  border: 1px solid rgba(141, 120, 87, 0.15);
+  padding: 4px;
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-primary);
+  border: 1px dashed rgba(141, 120, 87, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.project-image-placeholder svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-image-placeholder {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-style: solid;
+}
+
+.project-card:hover .project-image-placeholder svg {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* 4. Social Badges Section */
+.socials-section {
+  margin-bottom: 1.2rem;
+}
+
+.social-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+  color: var(--fg-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(46, 44, 42, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.social-badge:hover {
+  transform: translateY(-2px);
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  border-color: var(--fg-color);
+  box-shadow: 0 8px 20px rgba(26, 25, 24, 0.15);
+}
+
+.social-badge:hover .social-icon {
+  transform: scale(1.15);
+}
+
+/* Custom hover specifically for mail/stroke icon to map colors correctly */
+.social-badge:hover svg[stroke] {
+  stroke: var(--bg-color);
+}
+
+/* --- Footer --- */
+.footer-section {
+  text-align: center;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(220, 215, 204, 0.4);
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+}
+
+/* --- Animations --- */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 2rem 1.2rem;
+  }
+  
+  .profile-name {
+    font-size: 2.3rem;
+  }
+  
+  .banner-wrapper {
+    height: 220px;
+  }
+  
+  .project-card {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+  
+  .project-visual {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .project-image-placeholder svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-badges {
+    flex-direction: column;
+  }
+  
+  .social-badge {
+    justify-content: center;
+  }
+}

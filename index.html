@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torbjørn Marø</title>
+    <meta name="description" content="Personal home page and portfolio of Torbjørn Marø, software developer and creator.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Favicon placeholder (inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Main Column Wrapper -->
+        <main class="content-column">
+            
+            <!-- Banner Image Section -->
+            <header class="banner-section animate-fade-in">
+                <div class="banner-wrapper">
+                    <img src="images/banner.jpg" alt="Steampunk workstation banner" class="banner-img" />
+                    <div class="banner-overlay"></div>
+                </div>
+            </header>
+
+            <!-- Profile Info Section -->
+            <section class="profile-section animate-fade-in" style="animation-delay: 0.1s;">
+                <div class="profile-header">
+                    <h1 id="main-title" class="profile-name">Torbjørn Marø</h1>
+                    <p class="profile-title">Software Craftsman</p>
+                </div>
+                
+                <div class="profile-bio card">
+                    <p>
+                        I am Torbjørn, a passionate developer of software since 1999, and currently working as a consultant at <a href="https://www.bouvet.no" target="_blank" rel="noopener">Bouvet</a>. 
+                        What exites me at the moment is working in a well functioning team, crafting a useful product for our customer, and discovering how to best utilize AI to deliver higher quality software efficiently.
+                    </p>
+                    <p>
+                        I am an allrounder, but have an affinity for programming languages - while .NET/C# is my workhorse, I have dabbled in a variety of languages over the years, including Ruby, Clojure, Common Lisp, Erlang, F#, Go, and more.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects-section animate-fade-in" style="animation-delay: 0.2s;">
+                <h2 class="section-title">Projects & Creations</h2>
+                
+                <div class="projects-stack">
+                    <!-- Project 1 -->
+                    <article class="project-card card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Ragnar</h3>
+                                <span class="project-badge">Active</span>
+                            </div>
+                            <p class="project-description">
+                                Ragnar is a programming language I am building through vibecoding and experimentation. It is based on Rebol, but hosted on the .NET runtime. I plan to use it as a go-to scripting language.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://tormaroe.github.io/ragnar" target="_blank" rel="noopener" class="project-link">
+                                    <span>View homepage
+                                    </span>
+                                    <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <img src="images/ragnar-logo-small.png" alt="Ragnar Logo" class="project-image" />
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <!-- <article class="project-card card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Minimalist Web Serve</h3>
+                                <span class="project-badge">Tool</span>
+                            </div>
+                            <p class="project-description">
+                                A lightweight, zero-dependency Node.js static file server configured to handle MIME types, headers, and basic directory routing. Built as a utility script to instantly serve test environments.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/tormaroe" target="_blank" rel="noopener" class="project-link">
+                                    <span>View Repository</span>
+                                    <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="project-image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </article> -->
+                </div>
+            </section>
+
+            <!-- Social Links Section -->
+            <section class="socials-section animate-fade-in" style="animation-delay: 0.3s;">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="social-badges">
+                    <!-- GitHub -->
+                    <a href="https://github.com/tormaroe" target="_blank" rel="noopener" class="social-badge" id="github-link">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/tormaroe/" target="_blank" rel="noopener" class="social-badge" id="linkedin-link">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer-section animate-fade-in" style="animation-delay: 0.4s;">
+            <p>&copy; <span id="current-year">2026</span> Torbjørn Marø.</p>
+        </footer>
+    </div>
+
+    <!-- Minimal script to set the current year dynamically -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
